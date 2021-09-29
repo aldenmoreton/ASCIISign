@@ -4,7 +4,7 @@ class Message(object):
 
 	def __init__(self, argument):
 		self.text = open(argument[2]).read().splitlines()
-		self.style = argument[1][1]
+		self.style = argument[1][0]
 
 	def draw(self, message):
 		output = [[0 for x in range(7)] for y in range(500)]
