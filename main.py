@@ -2,27 +2,21 @@ import sys
 from message import Message
 
 def main():
+
+	args = {}
+
 	if len(sys.argv) != 3:
-		return -1
-
-	m = Message(sys.argv)
-
-	if sys.argv[1][0] == 'C':
-		for i in m.text:
-			for j in range(len(i)):
-				m.draw(i[j])
-
-	elif sys.argv[1][0] == 'W':
-		for i in m.text:
-			if len(i) != 0: m.draw(i)
-
-	elif sys.argv[1][0] == 'L':
-		for i in m.text:
-			m.draw(i)
-
+		args['message'] = [input('Enter your message:')]
+		args['lineType'] = input('Enter your line type:')
+		args['style'] = input('Enter your character style:')
 	else:
-		print("Invalid Format")
+		args = {}
+		args['message'] = open(sys.argv[2]).read().splitlines()
+		args['lineType'] = sys.argv[1][0]
+		args['style'] = sys.argv[1][1]
+
+	m = Message(**args)
+	m.print()
 
 if __name__ == '__main__':
 	main()
-	
