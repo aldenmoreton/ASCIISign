@@ -1,5 +1,5 @@
 <div align=center>
-	<h1><b>5 X 7 ASCII Sign Generator</b></h1>
+	<h1><b>5 x 7 ASCII Sign Generator</b></h1>
 	<p>Convert ASCII values 32-126 into 5x7 blocks of text</p>
 </div>
 
